@@ -4,12 +4,18 @@ import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
 export class User {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    public id: number;
 
     @Column()
-    firstName: string;
+    public firstName: string;
 
     @Column()
-    lastName: string;
+    public lastName: string;
+
+    constructor(props: User = {} as User) {
+        this.id = props.id;
+        this.firstName = props.firstName;
+        this.lastName = props.lastName;
+    }
 
 }
